@@ -7,12 +7,12 @@ Example useage:
     document
       .find('#myID')
       .children
-      .find('li')
+      .findAll('li')
       .filter(li => li.className === 'foo')
       .remove();
       
     document
-      .find('a')
+      .findAll('a')
       .on('click', e => e.preventDefault());
       
     var foo = document.find('#foo').children;
