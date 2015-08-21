@@ -7,8 +7,7 @@ Example useage:
     document
       .find('#myID')
       .children
-      .findAll('li')
-      .filter(li => li.className === 'foo')
+      .filter(element => element.className === 'foo')
       .remove();
       
     document
@@ -18,5 +17,5 @@ Example useage:
     var foo = document.find('#foo').children;
     console.log(foo.sort( ... ));
     
-    document.body.appendChild(Element.create('hr'));
+    document.body.find('#foo').appendChild(Element.create('hr'));
     
