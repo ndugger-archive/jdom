@@ -74,7 +74,7 @@ if (!('remove' in Array.prototype))
 // NodeList
 // ====================
 if (!('filter' in NodeList.prototype))
-	NodeList.prototype.filter = function(fn) { 
+    NodeList.prototype.filter = function(fn) { 
         return Array.of(this).filter(fn); 
     };
 
@@ -84,7 +84,7 @@ if (!('forEach' in NodeList.prototype))
     };
 
 if (!('on' in NodeList.prototype))
-	NodeList.prototype.on = function(event, fn) { 
+    NodeList.prototype.on = function(event, fn) { 
         Array.of(this).on(event, fn);
     };
 
