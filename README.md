@@ -9,12 +9,12 @@ Example useage:
       .children
       .filter(element => element.className === 'foo')
       .remove();
-      
+
 
     document
       .findAll('a')
       .on('click', e => e.preventDefault());
-      
+
 
     var foo = document.find('#foo').children;
     console.log(foo.sort( ... ));
