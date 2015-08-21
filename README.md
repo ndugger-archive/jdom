@@ -17,3 +17,6 @@ Example useage:
       
     var foo = document.find('#foo').children;
     console.log(foo.sort( ... ));
+    
+    document.body.appendChild(Element.create('hr'));
+    
