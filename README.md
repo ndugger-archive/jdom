@@ -1,7 +1,17 @@
 # jdom
 Very tiny layer of abstraction over the DOM API to make things more legible and obvious.
 
-Example useage:
+API:
+---
+Find a single element:
+
+    document.find('#someElement');
+
+Find multiple elements:
+
+    document.findAll('.manyElements');
+
+Example usage:
 ---
 
     // Removing a child of #myID that has a class of 'foo'
