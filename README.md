@@ -4,7 +4,7 @@ Very tiny layer of abstraction over the DOM API to make things more legible and 
 API:
 ---
 
-- `document.find`
+- **`document.find`**
 
 Find a single element (Alias for `document.querySelector`):
 
