@@ -4,6 +4,9 @@ Very tiny layer of abstraction over the DOM API to make things more legible and 
 API:
 ===
 
+document
+---
+
 - **`document.find`**
 
 Find a single element (Alias for `document.querySelector`):
@@ -19,6 +22,15 @@ Find multiple elements (Alias for `document.querySelectorAll`):
     document.findAll(cssSelector);
     
 ---
+
+Element
+---
+
+- **`Element.prototype.appendTo`**
+
+Append an element to a specific parent ([Reverse] Alias for `Element.prototype.appendChild`):
+
+    myElement.appendTo(parentElement);
 
 - **`Element.create`**
 
