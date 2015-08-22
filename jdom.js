@@ -23,7 +23,12 @@ if (!('findAll' in Element.prototype))
     Element.prototype.findAll = Element.prototype.querySelectorAll;
 
 if (!('on' in Element.prototype)) 
-    Element.prototype.on = Element.prototype.addEventListener;
+    Element.prototype.on = function(event, fn) {
+        if ('addEventListener' in Element.prototype)
+            this.addEventListener(event, fn);
+        if ('attachEvent' in Element.prototype)
+            this.attachEvent('on' + event, fn);
+    }
 
 if (!('remove' in Element.prototype))
     Element.prototype.remove = function() {
