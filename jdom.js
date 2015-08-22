@@ -63,7 +63,7 @@ if (!('of' in Array))
 if (!('on' in Array.prototype))
     Array.prototype.on = function(event, fn) {
         this.forEach(function(element) {
-            if (!('on' in element)) throw new TypeError('Expected type of Element; ' + typeof element + ' has no "on" method.');
+            if (!('on' in element)) throw new TypeError(typeof element + '.on is not a function');
             element.on(event, fn);
         });
     } 
@@ -71,7 +71,7 @@ if (!('on' in Array.prototype))
 if (!('remove' in Array.prototype))
     Array.prototype.remove = function() { 
         this.forEach(function(element) { 
-            if (!('remove' in element)) throw new TypeError('Expected type of Element; ' + typeof element + ' has no "remove" method.');
+            if (!('remove' in element)) throw new TypeError(typeof element + '.remove is not a function');
             element.remove();
         }); 
     };
