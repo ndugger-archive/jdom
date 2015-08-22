@@ -2,7 +2,7 @@
 Very tiny layer of abstraction over the DOM API to make things more legible and obvious.
 
 API:
----
+===
 
 - **`document.find`**
 
@@ -12,22 +12,24 @@ Find a single element (Alias for `document.querySelector`):
     
 ---
 
-- `document.findAll`
+- **`document.findAll`**
 
 Find multiple elements (Alias for `document.querySelectorAll`):
 
     document.findAll(cssSelector);
+    
+---
 
-- `Element.create`
+- **`Element.create`**
 
 Create a new element (Similar to `Object.create`, Alias for `document.createElement`):
 
     Element.create(tagName);
 
-
+---
 
 Example usage:
----
+===
 
     // Removing a child of #myID that has a class of 'foo'
     document
