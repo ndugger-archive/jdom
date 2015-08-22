@@ -28,6 +28,10 @@ Create a new element (Similar to `Object.create`, Alias for `document.createElem
 
 ---
 
+*Adding more... work in progress...*
+
+---
+
 Example usage:
 ===
 
