@@ -26,19 +26,19 @@ Find multiple elements (Alias for `document.querySelectorAll`):
 Element
 ---
 
-- **`Element.prototype.appendTo`**
-
-Append an element to a specific parent ([Reverse] Alias for `Element.prototype.appendChild`):
-
-    myElement.appendTo(parentElement);
-
----
-
 - **`Element.create`**
 
 Create a new element (Similar to `Object.create`, Alias for `document.createElement`):
 
     Element.create(tagName);
+
+---
+
+- **`Element.prototype.appendTo`**
+
+Append an element to a specific parent ([Reverse] Alias for `Element.prototype.appendChild`):
+
+    myElement.appendTo(parentElement);
 
 ---
 
