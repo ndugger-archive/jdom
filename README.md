@@ -32,11 +32,29 @@ Append an element to a specific parent ([Reverse] Alias for `Element.prototype.a
 
     myElement.appendTo(parentElement);
 
+---
+
 - **`Element.create`**
 
 Create a new element (Similar to `Object.create`, Alias for `document.createElement`):
 
     Element.create(tagName);
+
+---
+
+- **`Element.prototype.find`**
+
+Find a single child of an element (Alias for `Element.prototype.querySelector`):
+
+    myElement.find(cssSelector);
+
+---
+
+- **`Element.prototype.findAll`**
+
+Find multiple children of an element (Alias for `Element.prototype.querySelectorAll`):
+
+    myElement.findAll(cssSelector);
 
 ---
 
