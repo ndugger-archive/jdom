@@ -4,6 +4,7 @@ Very tiny layer of abstraction over the DOM API to make things more legible and 
 Example useage:
 ---
 
+    // Removing a child of #myID that has a class of 'foo'
     document
       .find('#myID')
       .children
@@ -11,14 +12,21 @@ Example useage:
       .remove();
 
 
+    // Find all a tags, and disable their default behaviour on click
     document
       .findAll('a')
       .on('click', e => e.preventDefault());
 
 
-    var foo = document.find('#foo').children;
-    console.log(foo.sort( ... ));
+    // Get/remove children of #foo then put them back, sorted.
+    document
+      .find('#foo')
+      .children
+      .remove()
+      .sort((a, b) => ...)
+      .appendTo(document.find('#foo'));
     
 
+    // Append a new hr element to #foo
     document.body.find('#foo').appendChild(Element.create('hr'));
     
