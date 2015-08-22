@@ -58,7 +58,7 @@ if (!('of' in Array))
 if (!('on' in Array.prototype))
     Array.prototype.on = function(event, fn) {
         this.forEach(function(element) {
-            if (!('remove' in element)) throw new TypeError('Expected type of Element; ' + typeof element + ' has no "on" method.');
+            if (!('on' in element)) throw new TypeError('Expected type of Element; ' + typeof element + ' has no "on" method.');
             element.on(event, fn);
         });
     } 
@@ -101,16 +101,16 @@ if (!('sort' in NodeList.prototype))
 // HTMLCollection
 // ====================
 if (!('filter' in HTMLCollection.prototype))
-	HTMLCollection.prototype.filter = NodeList.prototype.filter;
+    HTMLCollection.prototype.filter = NodeList.prototype.filter;
 
 if (!('forEach' in HTMLCollection.prototype))
-	HTMLCollection.prototype.forEach = NodeList.prototype.forEach;
+    HTMLCollection.prototype.forEach = NodeList.prototype.forEach;
 
 if (!('on' in HTMLCollection.prototype))
-	HTMLCollection.prototype.on = NodeList.prototype.on;
+    HTMLCollection.prototype.on = NodeList.prototype.on;
 
 if (!('remove' in HTMLCollection.prototype))
-	HTMLCollection.prototype.remove = NodeList.prototype.remove;
+    HTMLCollection.prototype.remove = NodeList.prototype.remove;
 
 if (!('sort' in HTMLCollection.prototype))
     HTMLCollection.prototype.sort = NodeList.prototype.sort;
