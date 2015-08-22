@@ -1,6 +1,9 @@
 'use strict';
 
 // document
+// - body (static, property)
+// - find (static)
+// - findAll (static)
 // ====================
 if (!('body' in document)) 
 document.body = document.querySelector('body');
@@ -12,6 +15,12 @@ if (!('findAll' in document))
 document.findAll = document.querySelectorAll;
 
 // Element
+// - appendTo
+// - create (static)
+// - find
+// - findAll
+// - on
+// - remove
 // ====================
 if (!('appendTo' in Element.prototype))
 Element.prototype.appendTo = function(parent) {
@@ -42,6 +51,12 @@ Element.prototype.remove = function() {
 }
 
 // Array
+// - appendTo
+// - filter
+// - forEach
+// - of
+// - on
+// - remove
 // ====================
 if (!('appendTo' in Array.prototype))
 Array.prototype.appendTo = function(parent) {
@@ -93,6 +108,12 @@ Array.prototype.remove = function() {
 };
 
 // NodeList
+// - appendTo
+// - filter
+// - forEach
+// - on
+// - remove
+// - sort
 // ====================
 if (!('appendTo' in NodeList.prototype))
 NodeList.prototype.appendTo = function(parent) {
@@ -125,6 +146,12 @@ NodeList.prototype.sort = function(fn) {
 }
 
 // HTMLCollection
+// - appendTo
+// - filter
+// - forEach
+// - on
+// - remove
+// - sort
 // ====================
 if (!('appendTo' in HTMLCollection.prototype))
 HTMLCollection.prototype.appendTo = NodeList.prototype.appendTo;
