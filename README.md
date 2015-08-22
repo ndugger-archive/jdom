@@ -9,6 +9,8 @@ API:
 Find a single element (Alias for `document.querySelector`):
 
     document.find(cssSelector);
+    
+---
 
 - `document.findAll`
 
