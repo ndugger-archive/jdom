@@ -3,14 +3,17 @@ Very tiny layer of abstraction over the DOM API to make things more legible and 
 
 API:
 ---
+- `document.find`
 Find a single element (Alias for `document.querySelector`):
 
     document.find(cssSelector);
 
+- `document.findAll`
 Find multiple elements (Alias for `document.querySelectorAll`):
 
     document.findAll(cssSelector);
 
+- `Element.create`
 Create a new element (Similar to `Object.create`, Alias for `document.createElement`):
 
     Element.create(tagName);
