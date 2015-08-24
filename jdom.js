@@ -61,18 +61,18 @@ Element.prototype.remove = function() {
 // Array
 // ====================
 
+// returns Array
+if (!('of' in Array)) 
+Array.of = function(list) { 
+    return Array.prototype.slice.call(list); 
+};
+
 // returns undefined
 if (!('forEach' in Array.prototype))
 Array.prototype.forEach = function(fn, bound) {
     for (var i = 0; i < this.length; i++) {
         fn.call(bound, this[i], i, this)
     }
-};
-
-// returns Array
-if (!('of' in Array)) 
-Array.of = function(list) { 
-    return Array.prototype.slice.call(list); 
 };
 
 // ====================
