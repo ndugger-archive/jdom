@@ -1,6 +1,12 @@
 # jdom
 Very tiny layer of abstraction over the DOM API to make things more legible and obvious.
 
+Although this tiny library extends the DOM (which is not future-safe), the added features (which are only added upon the absence of that named method) are semantic and would more than likely match the functionality of any future additions to the DOM spec.
+
+We recommend that you do not use this in production, though. You never know if a same-named method is added and does something entirely different than what I assume it will do.
+
+Enjoy!
+
 API:
 ===
 
@@ -173,7 +179,7 @@ Converts NodeList to array and then sorts it
 HTMLCollection
 ---
 
-Uses the exact same functions as NodeList. The only differences being that `remove`, `appendTo`, and `on` return an `**HTMLCollection**`. Otherwise, the return types are the same.
+Uses the exact same functions as NodeList. The only differences being that `remove`, `appendTo`, and `on` return an **`HTMLCollection`**. Otherwise, the return types are the same.
 
 ---
 
