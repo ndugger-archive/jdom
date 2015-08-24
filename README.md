@@ -20,12 +20,10 @@ Example usage:
       .remove();
 
 
-
     // Find all a tags, and disable their default behaviour on click
     document
       .findAll('a')
       .on('click', e => e.preventDefault());
-
 
 
     // Get/remove children of #foo then put them back, sorted.
@@ -35,7 +33,6 @@ Example usage:
       .remove()
       .sort((a, b) => ...)
       .forEach(element => element.appendTo(document.find('#foo')));
-    
 
 
     // Append a new hr element to #foo
