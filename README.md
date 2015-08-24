@@ -60,7 +60,7 @@ Find multiple children of an element (Alias for `Element.prototype.querySelector
 
 - **`Element.prototype.on`** : `Element`
 
-Add an event listener to an element (supports attachEvent for IE8)
+Add an event listener to an element
 
     myElement.on(eventName, callback);
 
@@ -69,6 +69,7 @@ Add an event listener to an element (supports attachEvent for IE8)
 - **`Element.prototype.remove`** : `Element`
 
 Already a feature in modern browsers; removes element from DOM
+https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove
 
     myElement.remove();
     
@@ -80,14 +81,25 @@ Array
 - **`Array.of`** : `Array`
 
 ES6 feature that creates an array of ___; Used in *jdom* to transform a NodeList/HTMLCollection into an Array
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of
 
     Array.of(myNodeList);
     
 ---
 
+- **`Array.prototype.filter`** : `Array`
+
+Already a feature in modern browsers; filters an array
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+    myArray.filter(function(item, i, array) {
+        ...
+    }, bound);
+
 - **`Array.prototype.forEach`** : `undefined`
 
 Already a feature in modern browsers; iterates over Array
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
     myArray.forEach(function(item, i, array) {
         ...
@@ -100,13 +112,43 @@ NodeList
 
 - **`NodeList.prototype.forEach`** : `undefined`
 
-iterates over a NodeList
+Iterates over a NodeList
 
     myNodeList.forEach(function(element, i, nodelist) {
         ...
     }, bound);
 
 ---
+
+- **`NodeList.prototype.remove`** : `NodeList`
+
+Removes all elements in a NodeList from the DOM
+
+    myNodeList.remove();
+
+---
+
+- **`NodeList.prototype.appendTo`** : `NodeList`
+
+Appends elements in the NodeList to a specified parent
+
+    myNodeList.appendTo(parentElement);
+    
+---
+
+- **`NodeList.prototype.on`** : `NodeList`
+
+Adds an event listener to each item in the NodeList
+
+    myNodeList.on(eventName, callback);
+    
+---
+
+- **`NodeList.prototype.filter`** : `NodeList`
+
+Filters the NodeList for given rules
+
+    myNodeList.filter(filterCallback);
 
 *Adding more... work in progress...*
 
