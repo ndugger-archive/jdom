@@ -32,7 +32,9 @@ Example usage:
       .children
       .remove()
       .sort((a, b) => ...)
-      .appendTo(document.find('#foo'));
+      .forEach(function(element) {
+        element.appendTo(document.find('#foo'));
+      });
     
 
     // Append a new hr element to #foo
