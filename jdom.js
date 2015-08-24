@@ -3,44 +3,58 @@
 // ====================
 // document
 // ====================
+
+// returns 'body' element
 if (!('body' in document)) 
 document.body = document.querySelector('body');
 
+// returns single node/element
 if (!('find' in document)) 
 document.find = document.querySelector;
 
+// returns NodeList
 if (!('findAll' in document)) 
 document.findAll = document.querySelectorAll;
 
 // ====================
 // Element
 // ====================
+
+// returns Element
 if (!('appendTo' in Element.prototype))
 Element.prototype.appendTo = function(parent) {
     if (!('appendChild' in parent)) throw new TypeError('Cannot append ' + this + ' to ' + typeof parent);
     parent.appendChild(this);
+    return this;
 }
 
+// returns Element
 if (!('create' in Element))
 Element.create = document.createElement.bind(document);
 
+// returns single node/element
 if (!('find' in Element.prototype)) 
 Element.prototype.find = Element.prototype.querySelector;
 
+// returns NodeList
 if (!('findAll' in Element.prototype)) 
 Element.prototype.findAll = Element.prototype.querySelectorAll;
 
+// returns Element
 if (!('on' in Element.prototype)) 
 Element.prototype.on = function(event, fn) {
     if ('addEventListener' in Element.prototype)
         this.addEventListener(event, fn);
     if ('attachEvent' in Element.prototype)
         this.attachEvent('on' + event, fn);
+    return this;
 }
 
+// returns Element
 if (!('remove' in Element.prototype))
 Element.prototype.remove = function() {
     this.parentNode.removeChild(this);
+    return this;
 }
 
 // ====================
