@@ -170,7 +170,10 @@ Converts NodeList to array and then sorts it
     
 ---
 
-*Adding more... work in progress...*
+HTMLCollection
+---
+
+Uses the exact same functions as NodeList. The only differences being that `remove`, `appendTo`, and `on` return an `**HTMLCollection**`. Otherwise, the return types are the same.
 
 ---
 
