@@ -156,6 +156,19 @@ Filters the NodeList for given rules
 (see `Array.prototype.filter`)
 
     myNodeList.filter(filterCallback);
+    
+---
+
+- **`NodeList.prototype.sort`** : `Array`
+
+Converts NodeList to array and then sorts it
+(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+    myNodeList.sort(function(a, b) {
+        ...
+    });
+    
+---
 
 *Adding more... work in progress...*
 
