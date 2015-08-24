@@ -83,7 +83,7 @@ Array.prototype.filter = function(fn, bound) {
 if (!('forEach' in Array.prototype))
 Array.prototype.forEach = function(fn, bound) {
     for (var i = 0; i < this.length; i++) {
-        fn.call(bound, this[i], i, this)
+        fn.call(bound, this[i], i, this);
     }
 };
 
