@@ -58,6 +58,22 @@ Find multiple children of an element (Alias for `Element.prototype.querySelector
 
 ---
 
+- **`Element.prototype.on`**
+
+Add an event listener to an element (supports attachEvent for IE8)
+
+    myElement.on(eventName, callback);
+
+---
+
+- **`Element.prototype.remove`**
+
+Already a feature in major browsers; removes element from DOM
+
+    myElement.remove();
+    
+---
+
 *Adding more... work in progress...*
 
 ---
