@@ -1,9 +1,7 @@
 'use strict';
 
+// ====================
 // document
-// - body (static, property)
-// - find (static)
-// - findAll (static)
 // ====================
 if (!('body' in document)) 
 document.body = document.querySelector('body');
@@ -14,13 +12,8 @@ document.find = document.querySelector;
 if (!('findAll' in document)) 
 document.findAll = document.querySelectorAll;
 
+// ====================
 // Element
-// - appendTo
-// - create (static)
-// - find
-// - findAll
-// - on
-// - remove
 // ====================
 if (!('appendTo' in Element.prototype))
 Element.prototype.appendTo = function(parent) {
@@ -50,33 +43,11 @@ Element.prototype.remove = function() {
     this.parentNode.removeChild(this);
 }
 
-// Array
-// - appendTo
-// - filter
-// - forEach
-// - of
-// - on
-// - remove
 // ====================
-if (!('appendTo' in Array.prototype))
-Array.prototype.appendTo = function(parent) {
-    for (var i = 0; i < this.length; i++) {
-        if (!('appendChild' in parent)) throw new TypeError('Cannot append ' + this[i] + ' to ' + typeof parent);
-        parent.appendChild(this[i]);
-    }
-}
+// Array
+// ====================
 
-if (!('filter' in Array.prototype))
-Array.prototype.filter = function(fn, bound) {
-    var filtered = [];
-    for (var i = 0; i < this.length; i++) {
-        if (fn.call(bound, this[i], i, this)) {
-            filtered.push(this[i]);
-        }
-    }
-    return filtered;
-}
-
+// returns undefined
 if (!('forEach' in Array.prototype))
 Array.prototype.forEach = function(fn, bound) {
     for (var i = 0; i < this.length; i++) {
@@ -84,89 +55,95 @@ Array.prototype.forEach = function(fn, bound) {
     }
 };
 
+// returns Array
 if (!('of' in Array)) 
 Array.of = function(list) { 
     return Array.prototype.slice.call(list); 
 };
 
-if (!('on' in Array.prototype))
-Array.prototype.on = function(event, fn) {
+// ====================
+// NodeList
+// ====================
+
+// returns undefined
+if (!('forEach' in NodeList.prototype))
+NodeList.prototype.forEach = function(fn, bound) { 
+    for (var i = 0; i < this.length; i++) {
+        fn.call(bound, this[i], i, this);
+    }
+};
+
+// returns NodeList
+if (!('remove' in NodeList.prototype))
+NodeList.prototype.remove = function() { 
     this.forEach(function(element) {
-        if (!('on' in element)) throw new TypeError(typeof element + '.on is not a function');
+        element.remove();
+    });
+    return this;
+};
+
+// returns NodeList
+if (!('appendTo' in NodeList.prototype))
+NodeList.prototype.appendTo = function(parent) {
+    this.remove().forEach(function(element) {
+        parent.appendChild(element);
+    });
+    return this;
+};
+
+// returns NodeList
+if (!('on' in NodeList.prototype))
+NodeList.prototype.on = function(event, fn) {
+    this.forEach(function(element) {
         element.on(event, fn);
     });
     return this;
-} 
-
-if (!('remove' in Array.prototype))
-Array.prototype.remove = function() { 
-    this.forEach(function(element) { 
-        if (!('remove' in element)) throw new TypeError(typeof element + '.remove is not a function');
-        element.remove();
-    }); 
-    return this;
 };
 
-// NodeList
-// - appendTo
-// - filter
-// - forEach
-// - on
-// - remove
-// - sort
-// ====================
-if (!('appendTo' in NodeList.prototype))
-NodeList.prototype.appendTo = function(parent) {
-    return Array.of(this).appendTo(parent);
-}
-
+// returns NodeList
 if (!('filter' in NodeList.prototype))
 NodeList.prototype.filter = function(fn) { 
-    return Array.of(this).filter(fn); 
+    var jdr = Math.random();
+    Array.of(this).filter(fn).forEach(function(element) {
+        element.setAttribute('data-jdom', jdr);
+    });
+    var filtered = document.findAll('[data-jdom="' + jdr + '"]');
+    filtered.forEach(function(element) {
+        element.removeAttribute('data-jdom');
+    });
+    return filtered;
 };
 
-if (!('forEach' in NodeList.prototype))
-NodeList.prototype.forEach = function(fn) { 
-    return Array.of(this).forEach(fn);
-};
-
-if (!('on' in NodeList.prototype))
-NodeList.prototype.on = function(event, fn) { 
-    return Array.of(this).on(event, fn);
-};
-
-if (!('remove' in NodeList.prototype))
-NodeList.prototype.remove = function() { 
-    return Array.of(this).remove();
-};
-
+// returns Array
 if (!('sort' in NodeList.prototype))
 NodeList.prototype.sort = function(fn) {
     return Array.of(this).sort(fn);
 }
 
-// HTMLCollection
-// - appendTo
-// - filter
-// - forEach
-// - on
-// - remove
-// - sort
 // ====================
-if (!('appendTo' in HTMLCollection.prototype))
-HTMLCollection.prototype.appendTo = NodeList.prototype.appendTo;
+// HTMLCollection
+// ====================
 
-if (!('filter' in HTMLCollection.prototype))
-HTMLCollection.prototype.filter = NodeList.prototype.filter;
-
+// returns undefined
 if (!('forEach' in HTMLCollection.prototype))
 HTMLCollection.prototype.forEach = NodeList.prototype.forEach;
 
-if (!('on' in HTMLCollection.prototype))
-HTMLCollection.prototype.on = NodeList.prototype.on;
-
+// returns HTMLCollection
 if (!('remove' in HTMLCollection.prototype))
 HTMLCollection.prototype.remove = NodeList.prototype.remove;
 
+// returns HTMLCollection
+if (!('appendTo' in HTMLCollection.prototype))
+HTMLCollection.prototype.appendTo = NodeList.prototype.appendTo;
+
+// returns HTMLCollection
+if (!('on' in HTMLCollection.prototype))
+HTMLCollection.prototype.on = NodeList.prototype.on;
+
+// returns NodeList
+if (!('filter' in HTMLCollection.prototype))
+HTMLCollection.prototype.filter = NodeList.prototype.filter;
+
+// returns Array
 if (!('sort' in HTMLCollection.prototype))
 HTMLCollection.prototype.sort = NodeList.prototype.sort;
