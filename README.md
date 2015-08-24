@@ -12,7 +12,7 @@ Enjoy!
 Example usage:
 ===
 
-    // Removing any children of #myID that have a class of 'foo'
+    // Removing any children of #myID that have a class of 'foo' from the DOM
     document
       .find('#myID')
       .children
