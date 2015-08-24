@@ -1,6 +1,8 @@
 # jdom
 Very tiny layer of abstraction over the DOM API to make things more legible and obvious.
 
+This is more-ore-less an experiment on what the minimum amount of abstraction it would take to make the DOM api "pretty".
+
 Although this tiny library extends the DOM (which is not future-safe), the added features (which are only added upon the absence of that named method) are semantic and would more than likely match the functionality of any future additions to the DOM spec.
 
 We recommend that you do not use this in production, however. You never know if a same-named method is added and does something entirely different than what I assume it will do.
