@@ -21,16 +21,16 @@ document.findAll = document.querySelectorAll;
 // ====================
 
 // returns Element
+if (!('create' in Element))
+Element.create = document.createElement.bind(document);
+
+// returns Element
 if (!('appendTo' in Element.prototype))
 Element.prototype.appendTo = function(parent) {
     if (!('appendChild' in parent)) throw new TypeError('Cannot append ' + this + ' to ' + typeof parent);
     parent.appendChild(this);
     return this;
 }
-
-// returns Element
-if (!('create' in Element))
-Element.create = document.createElement.bind(document);
 
 // returns single node/element
 if (!('find' in Element.prototype)) 
