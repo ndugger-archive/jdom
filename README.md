@@ -7,7 +7,7 @@ API:
 document
 ---
 
-- **`document.find`**
+- **`document.find`** : `Element`
 
 Find a single element (Alias for `document.querySelector`):
 
@@ -15,7 +15,7 @@ Find a single element (Alias for `document.querySelector`):
     
 ---
 
-- **`document.findAll`**
+- **`document.findAll`** : `NodeList`
 
 Find multiple elements (Alias for `document.querySelectorAll`):
 
@@ -26,7 +26,7 @@ Find multiple elements (Alias for `document.querySelectorAll`):
 Element
 ---
 
-- **`Element.create`**
+- **`Element.create`** : `Element`
 
 Create a new element (Similar to `Object.create`, Alias for `document.createElement`):
 
@@ -34,7 +34,7 @@ Create a new element (Similar to `Object.create`, Alias for `document.createElem
 
 ---
 
-- **`Element.prototype.appendTo`**
+- **`Element.prototype.appendTo`** : `Element`
 
 Append an element to a specific parent ([Reverse] Alias for `Element.prototype.appendChild`):
 
@@ -42,7 +42,7 @@ Append an element to a specific parent ([Reverse] Alias for `Element.prototype.a
 
 ---
 
-- **`Element.prototype.find`**
+- **`Element.prototype.find`** : `Element`
 
 Find a single child of an element (Alias for `Element.prototype.querySelector`):
 
@@ -50,7 +50,7 @@ Find a single child of an element (Alias for `Element.prototype.querySelector`):
 
 ---
 
-- **`Element.prototype.findAll`**
+- **`Element.prototype.findAll`** : `NodeList`
 
 Find multiple children of an element (Alias for `Element.prototype.querySelectorAll`):
 
@@ -58,7 +58,7 @@ Find multiple children of an element (Alias for `Element.prototype.querySelector
 
 ---
 
-- **`Element.prototype.on`**
+- **`Element.prototype.on`** : `Element`
 
 Add an event listener to an element (supports attachEvent for IE8)
 
@@ -66,7 +66,7 @@ Add an event listener to an element (supports attachEvent for IE8)
 
 ---
 
-- **`Element.prototype.remove`**
+- **`Element.prototype.remove`** : `Element`
 
 Already a feature in modern browsers; removes element from DOM
 
@@ -77,15 +77,15 @@ Already a feature in modern browsers; removes element from DOM
 Array
 ---
 
-- **`Array.of`**
+- **`Array.of`** : `Array`
 
-ES6 feature that create an array of ___; Used to transform a NodeList/HTMLCollection into an Array
+ES6 feature that creates an array of ___; Used in *jdom* to transform a NodeList/HTMLCollection into an Array
 
     Array.of(myNodeList);
     
 ---
 
-- **`Array.prototype.forEach`**
+- **`Array.prototype.forEach`** : `undefined`
 
 Already a feature in modern browsers; iterates over Array
 
@@ -93,6 +93,19 @@ Already a feature in modern browsers; iterates over Array
         ...
     }, bound);
     
+---
+
+NodeList
+---
+
+- **`NodeList.prototype.forEach`** : `undefined`
+
+iterates over a NodeList
+
+    myNodeList.forEach(function(element, i, nodelist) {
+        ...
+    }, bound);
+
 ---
 
 *Adding more... work in progress...*
