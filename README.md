@@ -69,7 +69,7 @@ Add an event listener to an element
 - **`Element.prototype.remove`** : `Element`
 
 Already a feature in modern browsers; removes element from DOM
-https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove
+(https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove)
 
     myElement.remove();
     
@@ -81,7 +81,7 @@ Array
 - **`Array.of`** : `Array`
 
 ES6 feature that creates an array of ___; Used in *jdom* to transform a NodeList/HTMLCollection into an Array
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of
+(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of)
 
     Array.of(myNodeList);
     
@@ -90,16 +90,18 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 - **`Array.prototype.filter`** : `Array`
 
 Already a feature in modern browsers; filters an array
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
     myArray.filter(function(item, i, array) {
         ...
     }, bound);
+    
+---
 
 - **`Array.prototype.forEach`** : `undefined`
 
 Already a feature in modern browsers; iterates over Array
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
     myArray.forEach(function(item, i, array) {
         ...
@@ -113,6 +115,7 @@ NodeList
 - **`NodeList.prototype.forEach`** : `undefined`
 
 Iterates over a NodeList
+(see `Array.prototype.forEach`)
 
     myNodeList.forEach(function(element, i, nodelist) {
         ...
@@ -123,6 +126,7 @@ Iterates over a NodeList
 - **`NodeList.prototype.remove`** : `NodeList`
 
 Removes all elements in a NodeList from the DOM
+(see `Element.prototype.remove`)
 
     myNodeList.remove();
 
@@ -131,6 +135,7 @@ Removes all elements in a NodeList from the DOM
 - **`NodeList.prototype.appendTo`** : `NodeList`
 
 Appends elements in the NodeList to a specified parent
+(see `Element.prototype.appendTo`)
 
     myNodeList.appendTo(parentElement);
     
@@ -139,6 +144,7 @@ Appends elements in the NodeList to a specified parent
 - **`NodeList.prototype.on`** : `NodeList`
 
 Adds an event listener to each item in the NodeList
+(see `Element.prototype.on`)
 
     myNodeList.on(eventName, callback);
     
@@ -147,6 +153,7 @@ Adds an event listener to each item in the NodeList
 - **`NodeList.prototype.filter`** : `NodeList`
 
 Filters the NodeList for given rules
+(see `Array.prototype.filter`)
 
     myNodeList.filter(filterCallback);
 
