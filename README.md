@@ -68,9 +68,30 @@ Add an event listener to an element (supports attachEvent for IE8)
 
 - **`Element.prototype.remove`**
 
-Already a feature in major browsers; removes element from DOM
+Already a feature in modern browsers; removes element from DOM
 
     myElement.remove();
+    
+---
+
+Array
+---
+
+- **`Array.of`**
+
+ES6 feature that create an array of ___; Used to transform a NodeList/HTMLCollection into an Array
+
+    Array.of(myNodeList);
+    
+---
+
+- **`Array.prototype.forEach`**
+
+Already a feature in modern browsers; iterates over Array
+
+    myArray.forEach(function(item, i, array) {
+        ...
+    }, bound);
     
 ---
 
