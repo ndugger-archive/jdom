@@ -24,8 +24,11 @@ document.findAll = document.querySelectorAll;
 if (!('create' in Element))
 Element.create = function(tag, properties) {
     var element = document.createElement(tag);
-    for (var property in properties) if (property in element) {
-        element[property] = properties[property];
+    for (var a in properties) if (a in element) {
+        if (typeof properties[a] === 'object') for (var b in properties[a]) if (b in element[a]) {
+            element[a][b] = properties[a][b];
+        }
+        else element[a] = properties[a];
     }
     return element;
 };
