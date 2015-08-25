@@ -37,8 +37,11 @@ Example usage:
       .forEach(element => element.appendTo(document.find('#foo')));
 
 
-    // Append a new hr element to #foo
-    document.body.find('#foo').appendChild(Element.create('hr'));
+    // Append a new div element to #foo
+    var div = Element.create('div', {
+        id: 'myDiv'
+    });
+    document.body.find('#foo').appendChild(div);
     
 
 API:
