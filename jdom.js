@@ -22,7 +22,13 @@ document.findAll = document.querySelectorAll;
 
 // returns Element
 if (!('create' in Element))
-Element.create = document.createElement.bind(document);
+Element.create = function(tag, properties) {
+    var element = document.createElement(tag);
+    for (var property in properties) if (property in element) {
+        element[property] = properties[property];
+    }
+    return element;
+};
 
 // returns Element
 if (!('appendTo' in Element.prototype))
@@ -30,7 +36,7 @@ Element.prototype.appendTo = function(parent) {
     if (!('appendChild' in parent)) throw new TypeError('Cannot append ' + this + ' to ' + typeof parent);
     parent.appendChild(this);
     return this;
-}
+};
 
 // returns single node/element
 if (!('find' in Element.prototype)) 
@@ -45,17 +51,17 @@ if (!('on' in Element.prototype))
 Element.prototype.on = function(event, fn) {
     if ('addEventListener' in Element.prototype)
         this.addEventListener(event, fn);
-    if ('attachEvent' in Element.prototype)
+    else if ('attachEvent' in Element.prototype)
         this.attachEvent('on' + event, fn);
     return this;
-}
+};
 
 // returns Element
 if (!('remove' in Element.prototype))
 Element.prototype.remove = function() {
     this.parentNode.removeChild(this);
     return this;
-}
+};
 
 // ====================
 // Array
@@ -77,7 +83,7 @@ Array.prototype.filter = function(fn, bound) {
         }
     }
     return filtered;
-}
+};
 
 // returns undefined
 if (!('forEach' in Array.prototype))
@@ -144,7 +150,7 @@ NodeList.prototype.filter = function(fn) {
 if (!('sort' in NodeList.prototype))
 NodeList.prototype.sort = function(fn) {
     return Array.of(this).sort(fn);
-}
+};
 
 // ====================
 // HTMLCollection
