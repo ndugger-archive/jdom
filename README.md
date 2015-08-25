@@ -76,7 +76,7 @@ Element
 
 Create a new element (Similar to `Object.create`, Alias for `document.createElement`):
 
-    Element.create(tagName);
+    Element.create(tagName, properties);
 
 ---
 
