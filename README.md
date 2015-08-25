@@ -39,7 +39,10 @@ Example usage:
 
     // Append a new div element to #foo
     var div = Element.create('div', {
-        id: 'myDiv'
+        id: 'myDiv',
+        style: {
+            fontWeight: 'bold'
+        }
     });
     document.body.find('#foo').appendChild(div);
     
