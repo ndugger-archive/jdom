@@ -28,8 +28,12 @@ Example usage:
       .on('click', e => e.preventDefault());
 
 
-    // Get children of #foo then append them into the parent, sorted.
-    Array.of(document.find('#foo').children)
+    // Get/remove children of #foo then append them into the parent, sorted.
+    document
+      .find('#foo')
+      .children
+      .remove()
+      .toArray()
       .sort((a, b) => ...)
       .forEach(element => element.appendTo(document.find('#foo')));
 
@@ -213,14 +217,11 @@ Filters the NodeList for given rules
     
 ---
 
-- **`NodeList.prototype.sort`** : `Array`
+- **`NodeList.prototype.toArray`** : `Array`
 
-Converts NodeList to array and then sorts it
-(https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+Converts NodeList to array (see Array.of)
 
-    myNodeList.sort(function(a, b) {
-        ...
-    });
+    myNodeList.toArray()
     
 ---
 
