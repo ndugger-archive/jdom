@@ -31,6 +31,36 @@ if (!('findAll' in document))
 document.findAll = document.querySelectorAll;
 
 // ====================
+// Array
+// ====================
+
+// returns Array
+if (!('of' in Array)) 
+Array.of = function(list) { 
+    return Array.prototype.slice.call(list); 
+};
+
+// returns Array
+if (!('filter' in Array.prototype))
+Array.prototype.filter = function(fn, bound) {
+    var filtered = [];
+    for (var i = 0; i < this.length; i++) {
+        if (fn.call(bound, this[i], i, this)) {
+            filtered.push(this[i]);
+        }
+    }
+    return filtered;
+};
+
+// returns undefined
+if (!('forEach' in Array.prototype))
+Array.prototype.forEach = function(fn, bound) {
+    for (var i = 0; i < this.length; i++) {
+        fn.call(bound, this[i], i, this);
+    }
+};
+
+// ====================
 // Element
 // ====================
 
@@ -78,36 +108,6 @@ if (!('remove' in Element.prototype))
 Element.prototype.remove = function() {
     this.parentNode.removeChild(this);
     return this;
-};
-
-// ====================
-// Array
-// ====================
-
-// returns Array
-if (!('of' in Array)) 
-Array.of = function(list) { 
-    return Array.prototype.slice.call(list); 
-};
-
-// returns Array
-if (!('filter' in Array.prototype))
-Array.prototype.filter = function(fn, bound) {
-    var filtered = [];
-    for (var i = 0; i < this.length; i++) {
-        if (fn.call(bound, this[i], i, this)) {
-            filtered.push(this[i]);
-        }
-    }
-    return filtered;
-};
-
-// returns undefined
-if (!('forEach' in Array.prototype))
-Array.prototype.forEach = function(fn, bound) {
-    for (var i = 0; i < this.length; i++) {
-        fn.call(bound, this[i], i, this);
-    }
 };
 
 // ====================
