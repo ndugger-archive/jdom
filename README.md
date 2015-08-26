@@ -14,7 +14,7 @@ Enjoy!
 ---
 
 **Current issues:**
-- NodeList.prototype.remove does not return a NodeList with each original element
+- `NodeList.prototype.remove` does not return a NodeList with each original element
 
 ---
 
