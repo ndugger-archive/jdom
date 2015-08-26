@@ -28,11 +28,8 @@ Example usage:
       .on('click', e => e.preventDefault());
 
 
-    // Get/remove children of #foo then put them back, sorted.
-    document
-      .find('#foo')
-      .children
-      .remove()
+    // Get children of #foo then append them into the parent, sorted.
+    Array.of(document.find('#foo').children)
       .sort((a, b) => ...)
       .forEach(element => element.appendTo(document.find('#foo')));
 
