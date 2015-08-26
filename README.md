@@ -50,6 +50,15 @@ Example usage:
 API:
 ===
 
+window
+---
+
+- **`window.on`** : `window`
+
+Add an event listener to window.
+
+    window.on(eventName, callback);
+
 document
 ---
 
