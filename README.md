@@ -219,7 +219,7 @@ Filters the NodeList for given rules
 
 - **`NodeList.prototype.toArray`** : `Array`
 
-Converts NodeList to array (see Array.of)
+Converts NodeList to array (see `Array.of`)
 
     myNodeList.toArray()
     
