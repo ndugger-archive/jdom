@@ -163,12 +163,6 @@ NodeList.prototype.filter = function(fn) {
     return filtered;
 };
 
-// returns Array
-if (!('sort' in NodeList.prototype))
-NodeList.prototype.sort = function(fn) {
-    return Array.of(this).sort(fn);
-};
-
 // ====================
 // HTMLCollection
 // ====================
@@ -192,7 +186,3 @@ HTMLCollection.prototype.on = NodeList.prototype.on;
 // returns NodeList
 if (!('filter' in HTMLCollection.prototype))
 HTMLCollection.prototype.filter = NodeList.prototype.filter;
-
-// returns Array
-if (!('sort' in HTMLCollection.prototype))
-HTMLCollection.prototype.sort = NodeList.prototype.sort;
