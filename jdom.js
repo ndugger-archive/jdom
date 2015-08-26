@@ -69,7 +69,6 @@ if (!('create' in Element))
 Element.create = function(tag, properties) {
     var element = document.createElement(tag);
     for (var a in properties) if (a in element) {
-        console.log(typeof properties[a], properties[a]);
         if (typeof properties[a] === 'object') {
             for (var b in properties[a]) if (b in element[a]) {
                 element[a][b] = properties[a][b];
