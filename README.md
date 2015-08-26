@@ -14,7 +14,7 @@ Enjoy!
 ---
 
 **Current issues:**
-- `HTMLCollection.prototype.remove` does not return a NodeList with each original element
+- `HTMLCollection.prototype.remove` does not return an HTMLCollection with each original element
 
 ---
 
