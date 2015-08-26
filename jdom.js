@@ -70,7 +70,7 @@ Element.create = function(tag, properties) {
     var element = document.createElement(tag);
     for (var a in properties) if (a in element) {
         if (typeof properties[a] === 'object') {
-            for (var b in properties[a]) if (b in element[a]) {
+            for (var b in properties[a]) if (b in element[a] || a === 'dataset') {
                 element[a][b] = properties[a][b];
             }
         }
