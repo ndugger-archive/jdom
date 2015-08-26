@@ -163,6 +163,12 @@ NodeList.prototype.filter = function(fn) {
     return filtered;
 };
 
+// returns Array
+if (!('toArray' in NodeList.prototype))
+NodeList.prototype.toArray = function() {
+    return Array.of(this);
+};
+
 // ====================
 // HTMLCollection
 // ====================
@@ -186,3 +192,7 @@ HTMLCollection.prototype.on = NodeList.prototype.on;
 // returns NodeList
 if (!('filter' in HTMLCollection.prototype))
 HTMLCollection.prototype.filter = NodeList.prototype.filter;
+
+// returns NodeList
+if (!('toArray' in HTMLCollection.prototype))
+HTMLCollection.prototype.toArray = NodeList.prototype.toArray;
