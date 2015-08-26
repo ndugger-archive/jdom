@@ -1,6 +1,20 @@
 'use strict';
 
 // ====================
+// window
+// ====================
+
+// returns window
+if (!('on' in window))
+window.on = function(event, fn) {
+    if ('addEventListener' in this)
+        this.addEventListener(event, fn);
+    else if ('attachEvent' in this)
+        this.attachEvent('on' + event, fn);
+    return this;
+};
+
+// ====================
 // document
 // ====================
 
