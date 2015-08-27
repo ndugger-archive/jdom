@@ -15,6 +15,7 @@ Enjoy!
 
 **Current issues:**
 - `HTMLCollection.prototype.remove` does not return an HTMLCollection with each original element
+- Apparently `document.find` and `findAll` are in the DOM proposal; implementation should match proposal.
 
 ---
 
