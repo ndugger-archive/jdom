@@ -1,7 +1,7 @@
 # jdom
 **Released under MIT license**
 
-**Currently refactoring entire lib as a modernization polyfill/lib**
+**Currently refactoring entire lib as a modernization polyfill/lib** - 9/1/2015
 
 Very tiny layer of abstraction over the DOM API to make things more legible and obvious.
 
