@@ -1,6 +1,8 @@
 # jdom
 **Released under MIT license**
 
+**Currently refactoring entire lib as a modernization polyfill/lib**
+
 Very tiny layer of abstraction over the DOM API to make things more legible and obvious.
 
 Although this tiny library extends the DOM (which is not future-safe), the added features (which are only added upon the absence of that named method) are semantic and would more than likely match the functionality of any future additions to the DOM spec.
